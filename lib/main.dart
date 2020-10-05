@@ -4,6 +4,8 @@ import 'package:flutter_cubit_bloc_tutorial/cubit/weather_cubit.dart';
 import 'package:flutter_cubit_bloc_tutorial/data/weather_repository.dart';
 import 'package:flutter_cubit_bloc_tutorial/pages/weather_search_page.dart';
 
+import 'bloc/weather_bloc.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: BlocProvider(
-        create: (context) => WeatherCubit(FakeWeatherRepository()),
+        create: (context) => WeatherBloc(FakeWeatherRepository()),
         child: WeatherSearchPage(),
       ),
     );
